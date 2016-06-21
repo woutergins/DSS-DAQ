@@ -1,0 +1,196 @@
+<definitions xmlns:tns="http://npg.dl.ac.uk:8015/DataBaseAccessServer.wsdl" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns="urn:DataBaseAccessServer" xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/" xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="DataBaseAccessServer" targetNamespace="http://npg.dl.ac.uk:8015/DataBaseAccessServer.wsdl">
+<types>
+<schema xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns="urn:DataBaseAccessServer" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:DataBaseAccessServer" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+<import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+</schema>
+</types>
+<message name="nodesRequest">
+<part name="nodeName" type="xsd:string"/>
+<part name="pattern" type="xsd:string"/>
+</message>
+<message name="nodesResponse">
+<part name="ResponseCode" type="xsd:int"/>
+<part name="result" type="xsd:string"/>
+</message>
+<message name="getRequest">
+<part name="nodeName" type="xsd:string"/>
+<part name="valueName" type="xsd:string"/>
+</message>
+<message name="getResponse">
+<part name="ResponseCode" type="xsd:int"/>
+<part name="result" type="xsd:string"/>
+</message>
+<message name="setRequest">
+<part name="nodeName" type="xsd:string"/>
+<part name="valueName" type="xsd:string"/>
+</message>
+<message name="setResponse">
+<part name="ResponseCode" type="xsd:int"/>
+</message>
+<message name="deleteRequest">
+<part name="nodeName" type="xsd:string"/>
+<part name="valueName" type="xsd:string"/>
+</message>
+<message name="deleteResponse">
+<part name="ResponseCode" type="xsd:int"/>
+</message>
+<message name="typeRequest">
+<part name="nodeName" type="xsd:string"/>
+<part name="valueName" type="xsd:string"/>
+</message>
+<message name="typeResponse">
+<part name="ResponseCode" type="xsd:int"/>
+<part name="result" type="xsd:string"/>
+</message>
+<message name="valuesRequest">
+<part name="nodeName" type="xsd:string"/>
+<part name="pattern" type="xsd:string"/>
+</message>
+<message name="valuesResponse">
+<part name="ResponseCode" type="xsd:int"/>
+<part name="result" type="xsd:string"/>
+</message>
+<message name="GetLastErrorRequest"></message>
+<message name="GetLastErrorResponse">
+<part name="ResponseCode" type="xsd:int"/>
+<part name="Code" type="xsd:int"/>
+<part name="Reason" type="xsd:string"/>
+</message>
+<message name="GetInformationRequest"></message>
+<message name="GetInformationResponse">
+<part name="ResponseCode" type="xsd:int"/>
+<part name="Reason" type="xsd:string"/>
+</message>
+<portType name="DataBaseAccessServerPortType">
+<operation name="nodes">
+<documentation>Service definition of function ns__nodes</documentation>
+<input message="tns:nodesRequest"/>
+<output message="tns:nodesResponse"/>
+</operation>
+<operation name="get">
+<documentation>Service definition of function ns__get</documentation>
+<input message="tns:getRequest"/>
+<output message="tns:getResponse"/>
+</operation>
+<operation name="set">
+<documentation>Service definition of function ns__set</documentation>
+<input message="tns:setRequest"/>
+<output message="tns:setResponse"/>
+</operation>
+<operation name="delete">
+<documentation>Service definition of function ns__delete</documentation>
+<input message="tns:deleteRequest"/>
+<output message="tns:deleteResponse"/>
+</operation>
+<operation name="type">
+<documentation>Service definition of function ns__type</documentation>
+<input message="tns:typeRequest"/>
+<output message="tns:typeResponse"/>
+</operation>
+<operation name="values">
+<documentation>Service definition of function ns__values</documentation>
+<input message="tns:valuesRequest"/>
+<output message="tns:valuesResponse"/>
+</operation>
+<operation name="GetLastError">
+<documentation>Service definition of function ns__GetLastError</documentation>
+<input message="tns:GetLastErrorRequest"/>
+<output message="tns:GetLastErrorResponse"/>
+</operation>
+<operation name="GetInformation">
+<documentation>Service definition of function ns__GetInformation</documentation>
+<input message="tns:GetInformationRequest"/>
+<output message="tns:GetInformationResponse"/>
+</operation>
+</portType>
+<binding name="DataBaseAccessServer" type="tns:DataBaseAccessServerPortType">
+<SOAP:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="nodes">
+<SOAP:operation style="rpc" soapAction=""/>
+<input>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="get">
+<SOAP:operation style="rpc" soapAction=""/>
+<input>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="set">
+<SOAP:operation style="rpc" soapAction=""/>
+<input>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="delete">
+<SOAP:operation style="rpc" soapAction=""/>
+<input>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="type">
+<SOAP:operation style="rpc" soapAction=""/>
+<input>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="values">
+<SOAP:operation style="rpc" soapAction=""/>
+<input>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="AccessServerVerbose">
+<SOAP:operation style="rpc" soapAction=""/>
+<input>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="GetLastError">
+<SOAP:operation style="rpc" soapAction=""/>
+<input>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="GetInformation">
+<SOAP:operation style="rpc" soapAction=""/>
+<input>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<SOAP:body use="encoded" namespace="urn:DataBaseAccessServer" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+</binding>
+<service name="DataBaseAccessServer">
+<documentation>gSOAP 2.7.6c generated service definition</documentation>
+<port name="DataBaseAccessServer" binding="tns:DataBaseAccessServer">
+<SOAP:address location="http://npg.dl.ac.uk/DataBaseAccessServer"/>
+</port>
+</service>
+</definitions>
