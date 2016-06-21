@@ -41,9 +41,11 @@ with open('/dev/shm/SHM_110205','r') as f, mmap.mmap(f.fileno(), 0, mmap.MAP_PRI
             idx = block_ages.index(age)
             offset = offset + buffer_size * idx
             block = mm[offset:offset+buffer_size]
-            # publish data over 0mq
             # socket.send(block)
+            print('')
             print(block)
+            print(type(block))
+            print('')
             # if no new data received, sleep a millisecond
         if nextage == struct.unpack('l',mm[32:40])[0]:
             time.sleep(0.001)
